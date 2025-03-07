@@ -25,7 +25,7 @@ export const useAuth = () => {
   });
 
   const { mutateAsync: login } = useMutation({
-    mutationFn: async (data: User) => {
+    mutationFn: async (data: Partial<User>) => {
       const response = await API.post("/api/users/login", data);
       return response.data;
     },
@@ -43,7 +43,7 @@ export const useAuth = () => {
   });
 
   const { mutate: register } = useMutation({
-    mutationFn: async (data: User) => {
+    mutationFn: async (data: Partial<User>) => {
       const response = await API.post("/api/users/register", data);
       return response.data;
     },

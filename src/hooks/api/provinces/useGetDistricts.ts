@@ -1,6 +1,6 @@
 import { API } from "@/app/api";
 import QUERY_KEYS from "@/constants/query-key";
-import { District } from "@/entities/provinces";
+import { District } from "@/models/province";
 import { useQuery } from "@tanstack/react-query";
 
 const useGetDistrict = (provinceId: string) => {

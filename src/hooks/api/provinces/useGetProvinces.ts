@@ -1,6 +1,6 @@
 import { API } from "@/app/api";
 import QUERY_KEYS from "@/constants/query-key";
-import { Province } from "@/entities/provinces";
+import { Province } from "@/models/province";
 import { useQuery } from "@tanstack/react-query";
 
 const useGetProvinces = () => {

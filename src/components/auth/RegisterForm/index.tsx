@@ -45,26 +45,26 @@ const RegisterForm = () => {
     });
   };
   return (
-    <div className="dark:border-gray-700 bg-white dark:bg-gray-800 shadow md:mt-0 xl:p-0 dark:border rounded-lg w-full sm:max-w-md">
-      <div className="space-y-4 md:space-y-6 p-6 sm:p-8">
-        <h1 className="font-bold text-gray-900 text-xl md:text-2xl dark:text-white leading-tight tracking-tight">
+    <div className='dark:border-gray-700 bg-white dark:bg-gray-800 shadow md:mt-0 xl:p-0 dark:border rounded-lg w-full sm:max-w-md'>
+      <div className='space-y-4 md:space-y-6 p-6 sm:p-8'>
+        <h1 className='font-bold text-gray-900 text-xl md:text-2xl dark:text-white leading-tight tracking-tight'>
           Đăng ký
         </h1>
         <Form {...form}>
           <form
-            className="space-y-4 md:space-y-6"
+            className='space-y-4 md:space-y-6'
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <FormField
               control={control}
-              name="name"
+              name='name'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
+                  <FormLabel className='block mb-2 font-medium text-gray-900 text-sm dark:text-white'>
                     Họ tên
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Họ tên của bạn" {...field} />
+                    <Input placeholder='Họ tên của bạn' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -72,14 +72,14 @@ const RegisterForm = () => {
             />
             <FormField
               control={control}
-              name="email"
+              name='email'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
+                  <FormLabel className='block mb-2 font-medium text-gray-900 text-sm dark:text-white'>
                     Email
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Email của bạn" {...field} />
+                    <Input placeholder='Email của bạn' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -87,14 +87,14 @@ const RegisterForm = () => {
             />
             <FormField
               control={control}
-              name="password"
+              name='password'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
+                  <FormLabel className='block mb-2 font-medium text-gray-900 text-sm dark:text-white'>
                     Mật khẩu
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Mật khẩu" {...field} type="password" />
+                    <Input placeholder='Mật khẩu' {...field} type='password' />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -102,8 +102,8 @@ const RegisterForm = () => {
             />
 
             <Button
-              type="submit"
-              className="w-full"
+              type='submit'
+              className='w-full'
               disabled={form.formState.isSubmitting || !form.formState.isValid}
             >
               Đăng ký

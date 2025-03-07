@@ -31,14 +31,14 @@ export function CustomerTable({ data }: IProps) {
             (table.getIsSomePageRowsSelected() && "indeterminate")
           }
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
+          aria-label='Select all'
         />
       ),
       cell: ({ row }) => (
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
+          aria-label='Select row'
         />
       ),
       enableSorting: false,
@@ -47,19 +47,19 @@ export function CustomerTable({ data }: IProps) {
     {
       accessorKey: "name",
       header: "Tên khách hàng",
-      cell: ({ row }) => <div className="capitalize">{row.original.name}</div>,
+      cell: ({ row }) => <div className='capitalize'>{row.original.name}</div>,
     },
     {
       id: "customerName",
       header: "Địa chỉ email",
-      cell: ({ row }) => <div className="lowercase">{row.original.email}</div>,
+      cell: ({ row }) => <div className='lowercase'>{row.original.email}</div>,
     },
     {
       accessorKey: "phoneNumber",
       header: "Số điện thoại",
       cell: ({ row }) => {
         return (
-          <div className="font-medium">
+          <div className='font-medium'>
             {row?.original?.phoneNumber ? row?.original?.phoneNumber : "-"}{" "}
           </div>
         );
@@ -70,7 +70,7 @@ export function CustomerTable({ data }: IProps) {
       header: "Ngày đăng ký",
       cell: ({ row }) => {
         return (
-          <div className="font-medium">
+          <div className='font-medium'>
             {formatDate(row.original?.createdAt)}
           </div>
         );
@@ -81,7 +81,7 @@ export function CustomerTable({ data }: IProps) {
       header: "Ngày hoạt động gần nhất",
       cell: ({ row }) => {
         return (
-          <div className="font-medium">
+          <div className='font-medium'>
             {formatDate(row.original?.createdAt)}
           </div>
         );
@@ -91,9 +91,9 @@ export function CustomerTable({ data }: IProps) {
     {
       id: "actions",
       enableHiding: false,
-      header: () => <div className="">Thao tác</div>,
-      cell: ({ row }) => {
-        return <div className="flex gap-3">-</div>;
+      header: () => <div className=''>Thao tác</div>,
+      cell: () => {
+        return <div className='flex gap-3'>-</div>;
       },
     },
   ];
@@ -101,23 +101,23 @@ export function CustomerTable({ data }: IProps) {
   const { table } = useDataGrid(columns, data);
 
   return (
-    <div className="w-full">
-      <div className="flex items-center py-4">
+    <div className='w-full'>
+      <div className='flex items-center py-4'>
         <Input
-          placeholder="Tìm kiếm theo tên khách hàng"
+          placeholder='Tìm kiếm theo tên khách hàng'
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className='max-w-sm'
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant='outline' className='ml-auto'>
               Cột <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align='end'>
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
@@ -125,7 +125,7 @@ export function CustomerTable({ data }: IProps) {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize"
+                    className='capitalize'
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -148,10 +148,10 @@ export function CustomerTable({ data }: IProps) {
         {table.getFilteredRowModel().rows.length} hàng tổng cộng)
       </div>
 
-      <div className="border rounded-md">
+      <div className='border rounded-md'>
         <DataTable table={table} columns={columns} />
       </div>
-      <div className="flex justify-between items-center py-4">
+      <div className='flex justify-between items-center py-4'>
         <DataTablePagination table={table} />
       </div>
     </div>

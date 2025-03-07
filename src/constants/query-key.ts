@@ -1,0 +1,28 @@
+const QUERY_KEYS = {
+  AUTH: "auth",
+  PRODUCTS: "products",
+  PRODUCT: "product",
+  UPDATE_PRODUCT: "update-product",
+  CATEGORIES: "categories",
+  CATEGORY: "category",
+  ADD_CATEGORY: "add-category",
+  UPDATE_CATEGORY: "update-category",
+  RELATED_PRODUCTS: "related-products",
+  PRODUCTS_BY_CATEGORY: "products-by-category",
+  PROVINCES: "provinces",
+  DISTRICTS: "districts",
+  WARDS: "wards",
+  ORDERS: "orders",
+  ORDERS_USER: "orders-user",
+  ORDER: "order",
+  OVERVIEW: "overview",
+  REVIEWS: "reviews",
+  USERS: "users",
+  PENDING_ORDERS: "pending-orders",
+  REVENUE_EXPECTED_CHART: "revenue-expected-chart",
+  REVENUE_CHART: "revenue-chart",
+  CHART_MONTHLY: "chart-monthly",
+  USER_ADDRESSES: "user-addresses",
+};
+
+export default QUERY_KEYS;
